@@ -1,4 +1,5 @@
 import discord
+import os
 from discord import Client
 
 client: Client = discord.Client()
@@ -21,4 +22,5 @@ async def on_message(message):
         await message.channel.send("(원하는 이모지를 추가하시오.)")
 
 
-client.run("NzMwNjg1MzEzNDU3ODQ4MzYw.XwbFug.9PInyRyT3k3ErHEdUlngW3nBojc")
+access_token = os.environ("BOT_TOKEN")
+client.run(access_token)
